@@ -1,0 +1,49 @@
+import 'package:flutter/material.dart'; 
+void main() => runApp( MaterialApp(     
+ home: Center(     
+  child: Row( 
+    mainAxisSize: MainAxisSize.min,         
+     children: [ 
+      CustomIcon(), 
+      SizedBox(width: 8), 
+      CustomText(), 
+      SizedBox(width: 8), 
+      CustomButton() 
+    ], 
+    ),
+   ),
+  ),
+ ),
+); 
+//custom Icon Widget 
+class CustomIcon extends StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) {    
+  return Icon(Icons.favorite,color: Colors.red);   
+ }
+} 
+//Custom Text Widget 
+class CustomText extends StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) { 
+    return Text('Custom Widget!', 
+    style: TextStyle(fontSize: 18,fontWeight: FontWeight.bold), 
+    );
+  }
+} 
+// Custom Button Widget 
+class CustomButton extends StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) {    
+   return ElevatedButton(     
+ onPressed: () { 
+       //Add your logic here 
+       ScaffoldMessenger.of(context).showSnackBar( 
+       SnackBar(content: Text('Button Pressed')
+       ), 
+      ); 
+     } 
+      child: Text('Click Me'), 
+    ); 
+    }
+   } 
