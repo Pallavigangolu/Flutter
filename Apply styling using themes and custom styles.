@@ -1,0 +1,37 @@
+import 'package:flutter/material.dart'; 
+void main() => runApp(   
+  MaterialApp(     
+  theme:ThemeData(     
+   primaryColor:Colors.deepPurple, 
+    iconTheme:IconThemeData(color:Colors.deepPurple, size:36),       
+   textTheme:TextTheme(  
+    bodyMedium:TextStyle(
+      fontSize:20,fontWeight:FontWeight.w600,color:Colors.deepPurple), 
+      ), 
+    ), 
+    home:Center(     
+    child:Row( 
+    mainAxisSize:MainAxisSize.min, 	
+      children:[ 
+        CustomIcon(), SizedBox(width:8), 
+        CustomText(), 
+      ], 
+     ),     
+    ),
+  ), 
+); 
+class CustomIcon extends StatelessWidget { 
+  @override 
+  Widget build(BuildContext context) {    
+ returnIcon(Icons.diamond, color: 
+Theme.of(context).iconTheme.color,size:Theme.of(context).iconTheme.size); 
+  }
+}  
+class CustomText extends StatelessWidget{ 
+  @override 
+  Widget build(BuildContext context) {    
+  return Text( 
+    'Styled by theme!', style:Theme.of(context).textTheme.bodyMedium, 
+    );
+  }
+} 
