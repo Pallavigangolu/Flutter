@@ -1,0 +1,34 @@
+import 'package:flutter/material.dart';
+void main() => runApp(
+  MaterialApp(
+ home:Scaffold(
+  appBar : AppBar(title:const Text('First Screen')),
+  body:Builder(
+    builder:(context){
+      return Center(
+      child:ElevatedButton(
+      child:const Text('Go to Second Screen'),
+       onPressed:(){
+         Navigator.push(
+         context,
+         MaterialPageRoute(
+         builder:(context)=>Scaffold(
+         appBar: AppBar(title:const Text('Second Screen')),
+           body:Center(
+           child:ElevatedButton(
+           child:const Text('Go back'),
+             onPressed:()=> Navigator.pop(context),
+           ),
+           ),
+         ),
+         ),
+         );
+         
+       }
+      )
+      );
+    },
+  ),
+ ),
+  ),
+);
